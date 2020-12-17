@@ -1,0 +1,26 @@
+/*
+Input: [7,1,5,3,6,4]
+Output: 5
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+             Not 7-1 = 6, as selling price needs to be larger than buying price.
+
+
+
+
+*/
+
+
+
+class Solution {
+   public int maxProfit(int[] prices) {
+     int max = 0;
+        int min = Integer.MAX_VALUE;
+        for(int i = 1; i < prices.length; i++){
+            if(prices[i] > prices[i-1])
+                min = Math.min(min, prices[i-1]);
+            max = Math.max(max, prices[i] - min);
+        }
+        
+        return max;  
+    }
+}
