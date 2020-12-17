@@ -1,0 +1,35 @@
+/*Input: [7,1,5,3,6,4]
+Output: 5
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+             Not 7-1 = 6, as selling price needs to be larger than buying price.
+             
+             */
+             
+             
+class Inversion_of_Array
+{
+    // arr[]: Input Array
+    // N : Size of the Array arr[]
+    
+    static long inversionCount(long arr[], long N)
+    {
+        
+        long count=0;
+        
+        // Your Code Here
+        for(int i=0; i<N-1; i++)
+        {
+            for(int j=i+1; j<N; j++ )
+            {
+                if(arr[i] > arr[j])
+                {
+                    count++;
+                }
+            }
+        }
+        
+       return count;
+        
+    }
+}             
+             
